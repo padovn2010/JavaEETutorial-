@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>User info page</title>
+        <h1> User info management </h1>
+        
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        
+        <h:form id="userForm">
+            
+            <h:messages style="color: red" />
+            
+            <h:outputLabel value="Edit personal information:" style="color:blue">  </h:outputLabel> <br/>
+            <h:outputLabel value="_________________________________________________________________________________" style="color:blue">  </h:outputLabel> <br/>
+            
+            <h:panelGrid columns="5" columnClasses="rightAlign, leftAlign, leftAlign, leftAlign">
+                
+                <h:outputLabel for="userName_ol1" value="Username:"></h:outputLabel>
+                <h:outputLabel for="userName_ol2" value=""></h:outputLabel>
+                <h:outputLabel for="userName" value="#{accountController.userName}"></h:outputLabel>
+                <!--                <h:outputLabel for="userName" value="Cannot change"></h:outputLabel>-->
+                <h:outputLabel for="userName_ol3" value=""></h:outputLabel>
+                
+                
+                <h:outputLabel for="password_ol" value="Password:"></h:outputLabel>
+<!--                <h:outputLabel for="password" value="#{accountController.password}"></h:outputLabel>-->
+                <h:inputText id="password" value="#{accountController.password}" disabled="#{!accountController.editModePW}"> </h:inputText>
+                
+                <h:commandButton value="Edit" action="#{accountController.editPW()}" disabled="#{accountController.editModePW}" ></h:commandButton>
+                <h:commandButton value="Save" action="#{accountController.savePW()}" ></h:commandButton>
+                
+                
+                <h:outputLabel for="fullName_ol" value="Full Name:"></h:outputLabel>
+<!--                <h:outputLabel for="fullName" value="#{accountController.fullName}"></h:outputLabel>-->
+                <h:inputText id="fullName" value="#{accountController.fullName}" disabled="#{!accountController.editModeFN}"> </h:inputText>               
+                
+                <h:commandButton value="Edit" action="#{accountController.editFN()}" disabled="#{accountController.editModeFN}" ></h:commandButton>
+                <h:commandButton value="Save" action="#{accountController.saveFN()}" ></h:commandButton>
+                
+                
+                <h:outputLabel for="email_ol" value="Email:"></h:outputLabel>
+<!--                <h:outputLabel for="email" value="#{accountController.email}"></h:outputLabel>-->
+                <h:inputText id="email" value="#{accountController.email}" disabled="#{!accountController.editModeEM}"> </h:inputText>               
+                
+                <h:commandButton value="Edit" action="#{accountController.editEM()}" disabled="#{accountController.editModeEM}" ></h:commandButton>
+                <h:commandButton value="Save" action="#{accountController.saveEM()}" ></h:commandButton>
+                
+                
+                <h:outputLabel for="DOB_ol" value="Date of Birth:"></h:outputLabel>
+<!--                <h:outputLabel for="DOB" value="#{accountController.dob}"></h:outputLabel>-->
+                <h:inputText id="dob" value="#{accountController.dob}" disabled="#{!accountController.editModeDOB}"> </h:inputText>                
+                
+                <h:commandButton value="Edit" action="#{accountController.editDOB()}" disabled="#{accountController.editModeDOB}"></h:commandButton>
+                <h:commandButton value="Save" action="#{accountController.saveDOB()}" ></h:commandButton>
+                
+                <br/> <br/> <br/>
+                
+                
+                <h:outputLabel for="change" value="Back to login page"></h:outputLabel>       
+                <h:commandButton action="login" value="Back"></h:commandButton>
+                
+                
+            </h:panelGrid>
+            
+            <br/> <br/>
+            
+            
+            <h:outputLabel value="Search other users:" style="color:blue">  </h:outputLabel> <br/>
+            <h:outputLabel value="_________________________________________________________________________________" style="color:blue">  </h:outputLabel> <br/>
+            
+            <h:panelGrid columns="4" columnClasses="leftAlign, leftAlign">
+                <h:outputLabel for="change" value="User: "></h:outputLabel>                       
+                <h:inputText id="search" value="#{ajaxController.searchTxt}" size="20">
+                    <f:ajax  render="testTxt" listener="#{ajaxController.hintUser()}" event="keyup"/>
+                </h:inputText>
+                <h:outputLabel for="none" value=""></h:outputLabel>
+                
+                <h:commandButton 
+                    actionListener="#{ajaxController.searchUsers()}" value="Search">
+                    <f:ajax render="listUsers"/>
+                </h:commandButton>
+                                
+                <h:outputText value="Hints:"/>
+                <h:outputText id="testTxt" value="#{ajaxController.hintUser()}"/> 
+                <h:outputText id="none_ot" value=""/> 
+                <br/> <br/>
+                                             
+                <h:outputText value="List of Users:"/>
+                <h:outputText id="listUsers" value="#{ajaxController.searchUsers()}"/>
+                                
+            </h:panelGrid>
+                        
+            <br/> <br/>
+            
+            <h:outputLabel value="Using web-service:" style="color:blue">  </h:outputLabel> <br/>
+            <h:outputLabel value="_________________________________________________________________________________" style="color:blue">  </h:outputLabel> <br/>
+            
+            <h:panelGrid columns="2" columnClasses="rightAlign, rightAlign">
+                
+                <h:outputLabel for="para01_ol" value="Para 01: "></h:outputLabel>                  
+                <h:inputText id="para01" value="#{wsclientcontroller.para01}" size="2"></h:inputText>  
+                
+                <h:outputLabel for="para02_ol" value="Para 02: "></h:outputLabel>                  
+                <h:inputText id="para02" value="#{wsclientcontroller.para02}" size="2"></h:inputText> 
+                               
+                <h:commandButton 
+                    actionListener="#{wsclientcontroller.wsSum()}" value="SUM">
+                    <f:ajax execute="para01 para02" render="sum"/> 
+                </h:commandButton>
+                
+                <h:outputLabel id="sum" value="#{wsclientcontroller.sum}"></h:outputLabel>                  
+                
+                
+                <h:commandButton 
+                    actionListener="#{wsclientcontroller.wsSub()}" value="SUB">
+                    <f:ajax execute="para01 para02" render="sub"/>
+                </h:commandButton>
+                
+                <h:outputLabel id="sub" value="#{wsclientcontroller.subtract}"></h:outputLabel>                  
+                               
+            </h:panelGrid>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+

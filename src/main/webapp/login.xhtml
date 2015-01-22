@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Login page</title>
+        <h1> Welcome to login page </h1>
+        
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        
+        <h:form id="userForm">
+            
+            <h:messages style="color: red" />
+            
+            <h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
+                <h:outputLabel for="userName_ol" value="Username:"></h:outputLabel>                
+                <h:inputText id="userName" label="Username" value="#{accountController.userName}" required="true"></h:inputText>
+                
+                <h:outputLabel for="password_ol" value="Password:"></h:outputLabel>
+                <h:inputSecret id="password" label="Password"  value="#{accountController.password}" required="true"></h:inputSecret>
+                
+                <br/> <br/>
+                <h:panelGroup>
+                    <h:commandButton action="#{accountController.checkLogIn()}" value="Login"></h:commandButton>
+                    
+                    <h:outputText value="&#160; &#160; &#160; "></h:outputText>
+                    <h:commandButton action="#{accountController.moveToRegister()}" value="Register"></h:commandButton>
+                </h:panelGroup>
+                
+            </h:panelGrid>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+

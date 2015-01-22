@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Confirmation page</title>
+        <h1> Account information </h1>
+    </h:head>
+    <h:body>
+        Add to DB successfully!!!
+        
+        <h:outputStylesheet library="css" name="styles.css"/>
+        <h:form id="confirmationForm">
+            <h:messages/>
+            
+            <h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
+                <h:outputLabel for="regUserName" value="Username:"></h:outputLabel>
+                <h:outputLabel for="regUserName" value="#{accountController.userName}"></h:outputLabel>
+                
+                <h:outputLabel for="regPassword" value="Password:"></h:outputLabel>
+                <h:outputLabel for="regPassword" value="#{accountController.password}"></h:outputLabel>
+                
+                <h:outputLabel for="email" value="Email:"></h:outputLabel>
+                <h:outputLabel for="email" value="#{accountController.email}"></h:outputLabel>
+                
+                <h:outputLabel for="fullName" value="Full Name:"></h:outputLabel>
+                <h:outputLabel for="fullName" value="#{accountController.fullName}"></h:outputLabel>
+                
+                <h:outputLabel for="DOB" value="DOB:"></h:outputLabel>
+                <h:outputLabel for="DOB" value="#{accountController.dob}">
+<!--                    <f:convertDateTime pattern="dd-mm-yyyy"/>-->
+                </h:outputLabel>
+                
+                <h:panelGroup>
+                <h:commandButton action="login" value="back"></h:commandButton>
+                </h:panelGroup>
+            </h:panelGrid>
+        </h:form>
+        
+    </h:body>
+</html>
+
