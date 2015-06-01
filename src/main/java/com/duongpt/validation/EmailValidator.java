@@ -30,7 +30,7 @@ public class EmailValidator implements Validator {
       if (!emailValidator.isValid(email)) {
         FacesMessage facesMessage = new FacesMessage(htmlInputText.
             getLabel()
-            + ": email is not valid");
+            + ": Email is not valid");
         throw new ValidatorException(facesMessage);
       }
     }
