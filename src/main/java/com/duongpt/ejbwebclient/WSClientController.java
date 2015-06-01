@@ -1,8 +1,3 @@
-/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
 package com.duongpt.ejbwebclient;
 
 import com.duongpt.javaeewebservice.Calculation;
@@ -43,11 +38,7 @@ public class WSClientController implements Serializable{
         
         // Get instance of web-service
         Calculation cal= calculationService.getCalculationPort();
-                
         int i = cal.sum(Integer.parseInt(para01), Integer.parseInt(para02));
-        
-        System.out.println(" wsSum() method + Tessssssssssssssssssssssssssssssssssssst = " + i);
-
         sum = Integer.toString(i);        
         return sum;
     }

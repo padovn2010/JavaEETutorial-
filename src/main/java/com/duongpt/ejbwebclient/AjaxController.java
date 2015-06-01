@@ -47,7 +47,7 @@ public class AjaxController implements Serializable{
             case "ph" :
                 return "phamduong";
             default:
-                System.out.println("else_St valuuuuuuuuuuuuuuuuue:......." + st);
+                System.out.println("Default value: " + st);
                 return "no hints";
         }
     }
@@ -58,7 +58,7 @@ public class AjaxController implements Serializable{
         
         listUsers = ajaxDaoBean.getUserNameList();
         
-        System.out.println( "VALUE OF listUsers: " + listUsers);
+        System.out.println( "Value of listUsers: " + listUsers);
         
         if (listUsers.contains(st)){
             return st;
@@ -66,12 +66,6 @@ public class AjaxController implements Serializable{
             return NO_EXISTED_USER;
         }
     }
-    
-    
-    /**
-     * Getter and Setter methods
-     * @return
-     */
     
     public String getSearchTxt() {
         return searchTxt;
