@@ -16,4 +16,4 @@ There are 4 main pages:
 -  register.xhtml -> Create new user accounts
 -  confirmation.xhtml -> Confirmation for new user if a the account has just created
 -  login.xhtml -> Check credentials of users
--  userinfo.xhtml -> Allow logged in users to change personal info -> Play a role of Web service client -> Search users via username . Using AJAX call to suggest related users . Get and show lists of "hit" users
+-  userinfo.xhtml -> Allow logged in users to change personal info -> Play roles of a web-service client -> Search users via username with AJAX call to suggest related users, then get and show lists of "hit" users
