@@ -1,9 +1,0 @@
-com\duongpt\javaeewebprojekt\Account.class
-com\duongpt\validation\EmailValidator.class
-com\duongpt\namedbean\namedBeanTrans.class
-com\duongpt\ejbwebclient\WSClientController.class
-com\duongpt\ejbwebclient\AjaxController.class
-com\duongpt\ejb\AccountDaoBean.class
-com\duongpt\ejbwebclient\AccountController.class
-com\duongpt\ejb\AjaxDaoBean.class
-com\duongpt\ejbwebclient\WSController_Test.class
