@@ -27,14 +27,12 @@
                 <!--                <h:outputLabel for="userName" value="Cannot change"></h:outputLabel>-->
                 <h:outputLabel for="userName_ol3" value=""></h:outputLabel>
                 
-                
                 <h:outputLabel for="password_ol" value="Password:"></h:outputLabel>
 <!--                <h:outputLabel for="password" value="#{accountController.password}"></h:outputLabel>-->
                 <h:inputText id="password" value="#{accountController.password}" disabled="#{!accountController.editModePW}"> </h:inputText>
                 
                 <h:commandButton value="Edit" action="#{accountController.editPW()}" disabled="#{accountController.editModePW}" ></h:commandButton>
                 <h:commandButton value="Save" action="#{accountController.savePW()}" ></h:commandButton>
-                
                 
                 <h:outputLabel for="fullName_ol" value="Full Name:"></h:outputLabel>
 <!--                <h:outputLabel for="fullName" value="#{accountController.fullName}"></h:outputLabel>-->
@@ -43,14 +41,12 @@
                 <h:commandButton value="Edit" action="#{accountController.editFN()}" disabled="#{accountController.editModeFN}" ></h:commandButton>
                 <h:commandButton value="Save" action="#{accountController.saveFN()}" ></h:commandButton>
                 
-                
                 <h:outputLabel for="email_ol" value="Email:"></h:outputLabel>
 <!--                <h:outputLabel for="email" value="#{accountController.email}"></h:outputLabel>-->
                 <h:inputText id="email" value="#{accountController.email}" disabled="#{!accountController.editModeEM}"> </h:inputText>               
                 
                 <h:commandButton value="Edit" action="#{accountController.editEM()}" disabled="#{accountController.editModeEM}" ></h:commandButton>
                 <h:commandButton value="Save" action="#{accountController.saveEM()}" ></h:commandButton>
-                
                 
                 <h:outputLabel for="DOB_ol" value="Date of Birth:"></h:outputLabel>
 <!--                <h:outputLabel for="DOB" value="#{accountController.dob}"></h:outputLabel>-->
@@ -61,15 +57,12 @@
                 
                 <br/> <br/> <br/>
                 
-                
                 <h:outputLabel for="change" value="Back to login page"></h:outputLabel>       
                 <h:commandButton action="login" value="Back"></h:commandButton>
-                
                 
             </h:panelGrid>
             
             <br/> <br/>
-            
             
             <h:outputLabel value="Search other users:" style="color:blue">  </h:outputLabel> <br/>
             <h:outputLabel value="_________________________________________________________________________________" style="color:blue">  </h:outputLabel> <br/>
@@ -115,7 +108,6 @@
                 </h:commandButton>
                 
                 <h:outputLabel id="sum" value="#{wsclientcontroller.sum}"></h:outputLabel>                  
-                
                 
                 <h:commandButton 
                     actionListener="#{wsclientcontroller.wsSub()}" value="SUB">

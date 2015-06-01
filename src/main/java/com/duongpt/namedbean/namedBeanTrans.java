@@ -1,10 +1,7 @@
 package com.duongpt.namedbean;
 
 import com.duongpt.javaeewebprojekt.Account;
-
 import javax.enterprise.context.RequestScoped;
-//import javax.faces.bean.RequestScoped; <== not work
-
 import javax.annotation.Resource;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -65,7 +62,7 @@ public class namedBeanTrans {
                 SystemException e)
         {
             //To see with type of throwed exception
-            System.err.println("Duongnnnnnnnnnnnnnnn type exception: " + e.getMessage() );
+            System.err.println("Exception type: " + e.getMessage() );
             
             if (e instanceof RollbackException){
                 retVal = "error_tran";
@@ -73,12 +70,10 @@ public class namedBeanTrans {
             } else {
                 retVal = "error";
                 e.printStackTrace();
-            }            
+            }
         }
         return retVal;
     }
-    
-      
     
 //later
     public void editUserInfo(){

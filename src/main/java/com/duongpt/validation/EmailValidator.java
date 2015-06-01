@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.duongpt.validation;
 
 /**
@@ -35,7 +30,7 @@ public class EmailValidator implements Validator {
       if (!emailValidator.isValid(email)) {
         FacesMessage facesMessage = new FacesMessage(htmlInputText.
             getLabel()
-            + ": email format is not valid");
+            + ": email is not valid");
         throw new ValidatorException(facesMessage);
       }
     }

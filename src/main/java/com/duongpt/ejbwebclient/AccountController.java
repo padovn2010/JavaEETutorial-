@@ -11,8 +11,7 @@ import javax.inject.Named;
 /**
  *
  * @author Pado
- * Define client of web which request EJB named AccountDaoBean - this client is Controller between JSF page and Data model - Account.java
- * Every transactions execute via EJB???
+ * Define client of web which request EJB named AccountDaoBean - this client is Controller between JSF page and Data model
  */
 @Named
 @SessionScoped
@@ -100,7 +99,6 @@ public class AccountController implements Serializable {
         return retVal;
     }
     
-    
     /**
      * Edit mode in user_info page
      */
@@ -145,7 +143,7 @@ public class AccountController implements Serializable {
      * load present user's data to keep data in fields of user info pages
      */
     private void loadInfoEdit(){
-        System.out.println("Edit() method _ StoreUser value::::::" + storeUser);
+        
         account = accountDaoBean.getAccount(storeUser);
         userName = account.getuserName();
         password = account.getpassword();
@@ -156,9 +154,7 @@ public class AccountController implements Serializable {
     
     private void editInfo(){
         
-        System.out.println("Save() method _ StoreUser value::::::" + storeUser);
         account = accountDaoBean.getAccount(storeUser);
-        
         userName = account.getuserName();
         account.setpassword(getPassword());
         account.setuserName(getUserName());
@@ -176,12 +172,6 @@ public class AccountController implements Serializable {
         fullName="";
         return "register";
     } 
-    
-    
-    /**
-     * Setter & Getter methods
-     * @return
-     */
     
     public String getUserName() {
         return userName;

@@ -10,7 +10,7 @@ import javax.ejb.EJB;
 /**
  *
  * @author Pado
- * define EJB for Ajax
+ * Define EJB for Ajax
  */
 @Named
 @SessionScoped
